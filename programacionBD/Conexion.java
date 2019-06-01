@@ -45,7 +45,7 @@ public class Conexion {
     /**
      * establece la conexion a la base de datos
      */
-    public void conectar() {
+    public boolean conectar() {
 
         conn = null;
 
@@ -53,9 +53,11 @@ public class Conexion {
             String url = "jdbc:sqlite:" + urldb;
             conn = DriverManager.getConnection(url);
             System.out.println("Conexion establecida.");
+            return true;
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -66,7 +68,7 @@ public class Conexion {
         try {
             if (conn != null) {
                 conn.close();
-                System.out.println("Connection to SQLite has been close.");
+                System.out.println("Connection cerrada.");
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
