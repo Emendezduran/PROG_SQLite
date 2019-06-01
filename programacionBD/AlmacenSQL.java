@@ -122,6 +122,7 @@ public class AlmacenSQL {
      *
      * @return int
      */
+    //metodo para modificar un Provedor en la base de datos
     public int modificarProveedor(String nomPv, String telPv, int idPv) {
         int rows = 0;
         String sql = "UPDATE proveedores SET nom_proveedor = '" + nomPv + "',tel_proveedor='" + telPv + "' WHERE id_proveedor = '" + idPv + "';";
@@ -222,6 +223,7 @@ public class AlmacenSQL {
      *
      * @return int
      */
+    //metodo para modificar una Localizacion en la base de datos
     public int modificarLocalizacion(String codEs, int idLo) {
 
         int rows = 0;
@@ -327,6 +329,7 @@ public class AlmacenSQL {
      *
      * @return int
      */
+    //metodo para modificar un Producto en la base de datos
     public int modificarProducto(String desPd, int idLo, int idPv, int idPd) {
         int rows = 0;
         String sql = "UPDATE productos SET descrip_producto = '" + desPd + "',id_localizacion='" + idLo + "',id_proveedor='" + idPv + "' WHERE id_producto = '" + idPd + "';";
