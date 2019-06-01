@@ -164,6 +164,7 @@ public class AlmacenSQL {
      *
      * @return ArrayList Object[]
      */
+    //metodo para visualizar tabla provedores de la base de datos
     public ArrayList<Object[]> mostrarProveedor() {
         ArrayList<Object[]> proveedores = new ArrayList<>();
         ResultSet rst = null;
@@ -267,6 +268,7 @@ public class AlmacenSQL {
      *
      * @return ArrayList Object[]
      */
+    //metodo para visualizar tabla localizacion de la base de datos
     public ArrayList<Object[]> mostrarLocalizacion() {
         ArrayList<Object[]> localizaciones = new ArrayList<>();
         ResultSet rst = null;
@@ -373,6 +375,7 @@ public class AlmacenSQL {
      *
      * @return ArrayList Object[]
      */
+    //metodo para visualizar tabla productos de la base de datos
     public ArrayList<Object[]> mostrarProductos() {
         ArrayList<Object[]> productos = new ArrayList<>();
         ResultSet rst = null;
