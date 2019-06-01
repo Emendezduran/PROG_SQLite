@@ -92,6 +92,7 @@ public class AlmacenSQL {
      *
      * @return int
      */
+    //metodo para insertar un Provedor en la base de datos
     public int insertarProveedor(String nomPv, String telPv) {
 
         String sql = "INSERT INTO proveedores VALUES(null,?,?)";
@@ -192,6 +193,7 @@ public class AlmacenSQL {
      * @return int
      *
      */
+     //metodo para insertar una Localizacion en la base de datos
     public int insertarLocalizacion(String codEs) {
 
         String sql = "INSERT INTO localizacion VALUES(null,?)";
@@ -293,6 +295,7 @@ public class AlmacenSQL {
      *
      * @return int
      */
+     //metodo para insertar un Producto en la base de datos
     public int insertarProducto(String desPd, int idLo, int idPv) {
 
         String sql = "INSERT INTO productos VALUES(null,?,?,?);";
