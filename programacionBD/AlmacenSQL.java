@@ -49,6 +49,7 @@ public class AlmacenSQL {
      * Crea las tablas proveedores, categorias, productos en la base de datos
      *
      */
+    //metodo crearTablas()
     public void crearTablas() {
         String sql1 = "CREATE TABLE IF NOT EXISTS proveedores (\n"
                 + "	id_proveedor integer PRIMARY KEY,\n"
