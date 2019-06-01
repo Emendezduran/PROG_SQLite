@@ -143,6 +143,7 @@ public class AlmacenSQL {
      * @param idPv - id de provedor proporcionado por el usuario
      * @return int 
      */
+    //metodo para borrar un Provedor en la base de datos
     public int borrarProveedor(int idPv) {
         int rows = 0;
         String sql = "DELETE FROM proveedores WHERE id_proveedor = '" + idPv + "';";
@@ -246,6 +247,7 @@ public class AlmacenSQL {
      *
      * @return int
      */
+    //metodo para borrar una Localizacion en la base de datos
     public int borrarLocalizacion(int idLo) {
         int rows = 0;
         String sql = "DELETE FROM localizacion WHERE id_localizacion = '" + idLo + "';";
@@ -350,6 +352,7 @@ public class AlmacenSQL {
      * @param idPd - id de producto proporcionado por el usuario
      * @return int;
      */
+    //metodo para borrar un Producto en la base de datos
     public int borrarProducto(int idPd) {
         int rows = 0;
         String sql = "DELETE FROM productos WHERE id_producto = '" + idPd + "';";
