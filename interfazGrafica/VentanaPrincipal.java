@@ -446,9 +446,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ventana.setVisible(true);
     }//GEN-LAST:event_jButton19ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;

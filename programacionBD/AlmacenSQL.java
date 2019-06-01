@@ -13,7 +13,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Clase con todos los comandos SQL utilizados por la base de datos
+ * Clase que define los metodos  a traves de los cuales podemos operar sobre 
+ * la base de datos con el uso de comandos SQL 
  *
  * @author EmilioMendez
  */
@@ -22,9 +23,10 @@ public class AlmacenSQL {
     private static AlmacenSQL openInstance;
 
     /**
-     * Metodo para reutilizar la instancia hacia la conexion de la base de datos
+     * Metodo getter para obtener instancia abierta de la clase AlmacenSQL desde
+     * otra clase
      *
-     *
+     * @return openInstance;
      */
     public static AlmacenSQL getOpenInstance() {
         return openInstance;
@@ -34,9 +36,9 @@ public class AlmacenSQL {
     private ResultSet rs;
 
     /**
-     * Contructor, Recibe un Objeto Conexion vinculado a la base de datos
+     * Contructor del Almacen
      *
-     * @param conexion 
+     * @param conexion - conexion vinculada a la base de datos 
      */
     public AlmacenSQL(Conexion conexion) {
         this.conexion = conexion;
@@ -84,9 +86,8 @@ public class AlmacenSQL {
     /**
      * Inserta un nuevo proveedor en la base de datos
      *
-     * @param nomPv
-     * @param telPv
-     * @param rows
+     * @param nomPv - nombre de provedor proporcionado por el usuario
+     * @param telPv - telefono de provedor proporcionado por el usuario
      *
      * @return int
      */
@@ -113,10 +114,9 @@ public class AlmacenSQL {
     /**
      * Modifica un proveedor en la base de datos
      *
-     * @param nomPv
-     * @param telPv
-     * @param idPv
-     * @param rows
+     * @param nomPv - nombre de provedor proporcionado por el usuario
+     * @param telPv - telefono de provedor proporcionado por el usuario
+     * @param idPv - id de provedor proporcionado por el usuario
      *
      * @return int
      */
@@ -137,9 +137,8 @@ public class AlmacenSQL {
     /**
      * Borra un Proveedor de la base de datos
      *
-     * @param idPv
-     * @param rows
-     * @return int
+     * @param idPv - id de provedor proporcionado por el usuario
+     * @return int 
      */
     public int borrarProveedor(int idPv) {
         int rows = 0;
@@ -158,7 +157,6 @@ public class AlmacenSQL {
     /**
      * Devuelve el resultado de una visualizacion de la tabla Proveedores
      *
-     * @param proveedores
      *
      * @return ArrayList Object[]
      */
@@ -188,8 +186,7 @@ public class AlmacenSQL {
     /**
      * Inserta una nueva localizacion en la base de datos
      *
-     * @param rows
-     * @param codEs
+     * @param codEs - codigo de estanteria proporcionado por el usuario
      *
      * @return int
      *
@@ -217,9 +214,8 @@ public class AlmacenSQL {
     /**
      * Modifica una Localizacion en la base de datos
      *
-     * @param codEs
-     * @param idLo
-     * @param rows
+     * @param codEs - codigo de estanteria proporcionado por el usuario 
+     * @param idLo - id de localizacion proporcionado por el usuario
      *
      * @return int
      */
@@ -241,8 +237,7 @@ public class AlmacenSQL {
     /**
      * Borra una Localizacion de la base de datos
      *
-     * @param idLo
-     * @param rows
+     * @param idLo - id de localizacion proporcionado por el usuario
      *
      * @return int
      */
@@ -291,10 +286,9 @@ public class AlmacenSQL {
     /**
      * Inserta un nuevo producto en la base de datos
      *
-     * @param desPd
-     * @param idCat
-     * @param idPv
-     * @param rows
+     * @param desPd - descripcion del producto proporcionado por el usuario
+     * @param idLo  - id de localizacion proporcionado por el usuario
+     * @param idPv - id de proveedor proporcionado por el usuario
      *
      * @return int
      */
@@ -322,11 +316,10 @@ public class AlmacenSQL {
     /**
      * Modifica un Producto en la base de datos
      *
-     * @param desPd
-     * @param idLo
-     * @param idPv
-     * @param idPd
-     * @param rows
+     * @param desPd - descripcion del producto proporcionado por el usuario
+     * @param idLo - id de localizacion proporcionado por el usuario
+     * @param idPv - id de proveedor proporcionado por el usuario
+     * @param idPd - id de producto proporcionado por el usuario
      *
      * @return int
      */
@@ -347,9 +340,8 @@ public class AlmacenSQL {
     /**
      * Borra un Producto de la base de datos
      *
-     * @param idPd
-     *
-     * @return stmt.executeUpdate(sql);
+     * @param idPd - id de producto proporcionado por el usuario
+     * @return int;
      */
     public int borrarProducto(int idPd) {
         int rows = 0;
@@ -396,7 +388,8 @@ public class AlmacenSQL {
     }
 
     /**
-     * Metodo para asignar una instancia hacia la conexion de la base de datos
+     * Metodo que vincula la instancia abierta de la clase AlmacenSQL para 
+     * evitar constante creacion de objetos en la interfaz grafica
      *
      *
      */

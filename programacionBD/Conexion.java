@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Clase Conexion se encaga de gestionar el uso de la base de datos
+ * Clase Conexion se encaga de gestionar la conexion con la base de datos
  *
  * @author EmilioMendez
  */
@@ -27,7 +27,7 @@ public class Conexion {
     /**
      * Constructor de conexion con la base de datos
      *
-     * @param url String ubicacion del archivo sqlite
+     * @param urldb String ubicacion del archivo sqlite
      */
     public Conexion(String urldb) {
         this.urldb = urldb;
@@ -73,25 +73,4 @@ public class Conexion {
         }
 
     }
-
-    /**
-     * Devuelve el numero de tablas de una base de datos
-     *
-     * @return
-     */
-    public int numOfTables() {
-        String sql = "SELECT name FROM  sqlite_master  WHERE type ='table' AND name NOT LIKE 'sqlite_%';";
-        int count = 0;
-        conectar();
-        try (Statement stmt = conn.createStatement()) {
-            ResultSet rs = stmt.executeQuery(sql);
-            count = rs.getInt(1);
-        } catch (SQLException ex) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            desconectar();
-        }
-        return count;
-    }
-
 }
