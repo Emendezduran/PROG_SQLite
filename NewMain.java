@@ -11,7 +11,7 @@ import programacionBD.AlmacenSQL;
 import programacionBD.Conexion;
 
 /**
- *
+ *PROGRAMA PARA CONTROL DE PRODUCTOS DEL ALMACEN DE UNA TIENDA
  * @author EmilioMendez
  */
 public class NewMain {
